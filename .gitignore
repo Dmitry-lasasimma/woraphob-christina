@@ -1,0 +1,7 @@
+# private reference material — never publish
+ref and info/
+.claude/
+.DS_Store
+
+# card generator stays on this Mac only
+tools/
