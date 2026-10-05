@@ -14,8 +14,8 @@
     rel="stylesheet">
   <style>
     /* =========================================================
-     Palette — from the blueprint. To make the card pinker or
-     calmer later, adjust the three --pink tokens only.
+     Palette — from the blueprint. To make the card bluer or
+     calmer later, adjust the three --blue tokens only.
      ========================================================= */
     :root {
       --ivory: #fbf7ef;
@@ -27,10 +27,10 @@
       --hairline: #e9dfc8;
       --gem: #f3f1ec;
 
-      --pink: #e7a3b3;
-      /* lotus / heart accent */
-      --pink-deep: #c9677f;
-      --pink-wash: rgba(240, 196, 206, 0.28);
+      --blue: #7899d8;
+      /* cornflower / heart accent */
+      --blue-deep: #456ab0;
+      --blue-wash: rgba(174, 198, 238, 0.22);
       /* background watercolor */
 
       --script: 'Pinyon Script', cursive;
@@ -58,13 +58,13 @@
       font-variant-numeric: lining-nums;
       color: var(--ink);
       background-color: var(--ivory);
-      /* faint pink marble / watercolor */
+      /* faint blue marble / watercolor */
       background-image:
-        radial-gradient(60% 40% at 8% 6%, var(--pink-wash), transparent 70%),
-        radial-gradient(50% 35% at 96% 30%, var(--pink-wash), transparent 70%),
-        radial-gradient(55% 40% at 4% 62%, var(--pink-wash), transparent 70%),
-        radial-gradient(60% 40% at 100% 92%, var(--pink-wash), transparent 70%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045 .011' numOctaves='5' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 .86 0 0 0 0 .62 0 0 0 0 .68 0 0 0 -3.2 1.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)' opacity='.22'/%3E%3C/svg%3E");
+        radial-gradient(60% 40% at 8% 6%, var(--blue-wash), transparent 70%),
+        radial-gradient(50% 35% at 96% 30%, var(--blue-wash), transparent 70%),
+        radial-gradient(55% 40% at 4% 62%, var(--blue-wash), transparent 70%),
+        radial-gradient(60% 40% at 100% 92%, var(--blue-wash), transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0045 .011' numOctaves='5' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .68 0 0 0 0 .86 0 0 0 -3.2 1.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)' opacity='.22'/%3E%3C/svg%3E");
       background-attachment: fixed;
       overflow-x: hidden;
     }
@@ -136,14 +136,14 @@
       color: var(--gold);
     }
 
-    /* ---------- lotus decorations ---------- */
-    .lotus {
+    /* ---------- cornflower decorations ---------- */
+    .cornflower {
       position: absolute;
       pointer-events: none;
       z-index: 0;
     }
 
-    section>*:not(.lotus) {
+    section>*:not(.cornflower) {
       position: relative;
       z-index: 1;
     }
@@ -691,7 +691,7 @@
     .swatches {
       display: flex;
       justify-content: center;
-      gap: 18px;
+      gap: 40px;
       margin-top: 16px;
     }
 
@@ -705,12 +705,12 @@
     .swatch-names {
       display: flex;
       justify-content: center;
-      gap: 18px;
+      gap: 6px;
       margin-top: 12px;
     }
 
     .swatch-names span {
-      width: 50px;
+      width: 84px;
       font-size: 10px;
       letter-spacing: 0.1em;
       color: var(--ink-soft);
@@ -792,7 +792,7 @@
       margin-top: 2px;
     }
 
-    .lotus-row {
+    .cornflower-row {
       display: block;
       width: calc(100% + 40px);
       margin: 18px -20px 0;
@@ -911,7 +911,7 @@
         margin: 0 -28px;
       }
 
-      .lotus-row {
+      .cornflower-row {
         width: calc(100% + 56px);
         margin: 18px -28px 0;
       }
@@ -933,15 +933,15 @@
         <stop offset="1" stop-color="#86652a" />
       </linearGradient>
       <linearGradient id="gPetal" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0" stop-color="#fff8f5" />
-        <stop offset=".45" stop-color="#f8d3db" />
-        <stop offset=".85" stop-color="#eb98ad" />
-        <stop offset="1" stop-color="#d9708d" />
+        <stop offset="0" stop-color="#f5f7fc" />
+        <stop offset=".45" stop-color="#cbd9f4" />
+        <stop offset=".85" stop-color="#799cdd" />
+        <stop offset="1" stop-color="#4668b4" />
       </linearGradient>
       <linearGradient id="gPetalBack" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0" stop-color="#fbe6ea" />
-        <stop offset=".6" stop-color="#eeaabb" />
-        <stop offset="1" stop-color="#d46a88" />
+        <stop offset="0" stop-color="#e8edf8" />
+        <stop offset=".6" stop-color="#9db6e4" />
+        <stop offset="1" stop-color="#5676bb" />
       </linearGradient>
       <linearGradient id="gPad" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stop-color="#eef0dc" />
@@ -950,44 +950,14 @@
 
       <path id="petal" d="M0 0 C-17 -20 -19 -58 0 -92 C19 -58 17 -20 0 0 Z" />
 
-      <!-- Pink lotus flower, base at (0,0) -->
-      <symbol id="lotus" viewBox="-110 -120 220 130" overflow="visible">
-        <g stroke="#e3a2b3" stroke-width=".8">
-          <use href="#petal" fill="url(#gPetalBack)" transform="rotate(-62) scale(.8 .78)" />
-          <use href="#petal" fill="url(#gPetalBack)" transform="rotate(62) scale(.8 .78)" />
-          <use href="#petal" fill="url(#gPetalBack)" transform="rotate(-38) scale(.9 .95)" />
-          <use href="#petal" fill="url(#gPetalBack)" transform="rotate(38) scale(.9 .95)" />
-          <use href="#petal" fill="url(#gPetal)" transform="rotate(-20) scale(.95 1.05)" />
-          <use href="#petal" fill="url(#gPetal)" transform="rotate(20) scale(.95 1.05)" />
-          <use href="#petal" fill="url(#gPetal)" transform="scale(1 1.12)" />
-          <use href="#petal" fill="url(#gPetal)" transform="rotate(-48) scale(.85 .7)" />
-          <use href="#petal" fill="url(#gPetal)" transform="rotate(48) scale(.85 .7)" />
-        </g>
-        <g fill="none" stroke="#e7a6b6" stroke-width=".7" opacity=".8">
-          <path d="M0 -8 C-2 -40 -2 -70 0 -96" />
-          <path d="M-5 -10 C-18 -38 -26 -64 -34 -84" />
-          <path d="M5 -10 C18 -38 26 -64 34 -84" />
-        </g>
-      </symbol>
+      <!-- Blue cornflower flower, base at (0,0) -->
+      <symbol id="cornflower" viewBox="-110 -120 220 130" overflow="visible"><path d="M0 10 Q10 -24 0 -60 M3 -6 Q-27 -16 -40 -43 Q-11 -32 3 -6 M6 -24 Q34 -48 43 -46 Q34 -24 6 -24" fill="#8c9b80" stroke="#6b826c" stroke-width="1.2"/><g transform="translate(0 -63)"><g><path transform="rotate(0.0) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(0.0) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(25.714285714285715) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(25.714285714285715) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(51.42857142857143) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(51.42857142857143) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(77.14285714285714) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(77.14285714285714) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(102.85714285714286) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(102.85714285714286) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(128.57142857142858) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(128.57142857142858) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(154.28571428571428) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(154.28571428571428) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(180.0) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(180.0) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(205.71428571428572) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(205.71428571428572) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(231.42857142857142) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(231.42857142857142) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(257.14285714285717) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(257.14285714285717) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(282.85714285714283) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(282.85714285714283) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(308.57142857142856) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(308.57142857142856) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(334.2857142857143) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(334.2857142857143) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(11.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(11.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(41.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(41.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(71.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(71.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(101.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(101.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(131.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(131.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(161.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(161.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(191.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(191.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(221.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(221.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(251.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(251.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(281.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(281.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(311.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(311.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(341.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(341.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><circle r="12" fill="#303762"/><circle cx="2.00" cy="0.00" r="1" fill="#a5afe3"/><circle cx="-2.95" cy="2.70" r="1" fill="#6978b6"/><circle cx="0.52" cy="-5.98" r="1" fill="#d5c9a0"/><circle cx="4.87" cy="6.35" r="1" fill="#a5afe3"/><circle cx="-9.85" cy="-1.74" r="1" fill="#6978b6"/><circle cx="1.69" cy="-1.07" r="1" fill="#d5c9a0"/><circle cx="-1.04" cy="3.86" r="1" fill="#a5afe3"/><circle cx="-2.76" cy="-5.33" r="1" fill="#6978b6"/><circle cx="7.51" cy="2.75" r="1" fill="#d5c9a0"/><circle cx="-9.24" cy="3.81" r="1" fill="#a5afe3"/><circle cx="0.85" cy="-1.81" r="1" fill="#6978b6"/><circle cx="1.20" cy="3.82" r="1" fill="#d5c9a0"/><circle cx="-5.19" cy="-3.01" r="1" fill="#a5afe3"/><circle cx="7.81" cy="-1.71" r="1" fill="#6978b6"/><circle cx="-5.76" cy="8.18" r="1" fill="#d5c9a0"/><circle cx="-0.26" cy="-1.98" r="1" fill="#a5afe3"/><circle cx="3.06" cy="2.58" r="1" fill="#6978b6"/><circle cx="-6.00" cy="0.24" r="1" fill="#d5c9a0"/><circle cx="5.67" cy="-5.64" r="1" fill="#a5afe3"/><circle cx="-0.47" cy="9.99" r="1" fill="#6978b6"/><circle cx="-1.28" cy="-1.54" r="1" fill="#d5c9a0"/><circle cx="3.96" cy="0.54" r="1" fill="#a5afe3"/><circle cx="-4.93" cy="3.42" r="1" fill="#6978b6"/><circle cx="1.76" cy="-7.80" r="1" fill="#d5c9a0"/></g></g></symbol>
 
-      <!-- Lotus bud -->
-      <symbol id="bud" viewBox="-30 -80 60 84" overflow="visible">
-        <path d="M0 0 C-15 -16 -16 -48 0 -74 C16 -48 15 -16 0 0 Z" fill="url(#gPetal)" stroke="#e3a2b3"
-          stroke-width=".8" />
-        <path d="M0 0 C-19 -8 -22 -34 -10 -52 C-12 -30 -8 -12 0 0 Z" fill="url(#gPetalBack)" stroke="#e3a2b3"
-          stroke-width=".8" />
-        <path d="M0 0 C19 -8 22 -34 10 -52 C12 -30 8 -12 0 0 Z" fill="url(#gPetalBack)" stroke="#e3a2b3"
-          stroke-width=".8" />
-      </symbol>
+      <!-- Cornflower bud -->
+      <symbol id="bud" viewBox="-30 -80 60 84"><path d="M0 4V-40" stroke="#75886b" stroke-width="2"/><g transform="translate(0 -48) scale(.4)"><g><path transform="rotate(0.0) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(0.0) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(25.714285714285715) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(25.714285714285715) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(51.42857142857143) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(51.42857142857143) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(77.14285714285714) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(77.14285714285714) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(102.85714285714286) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(102.85714285714286) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(128.57142857142858) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(128.57142857142858) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(154.28571428571428) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(154.28571428571428) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(180.0) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(180.0) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(205.71428571428572) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(205.71428571428572) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(231.42857142857142) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(231.42857142857142) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(257.14285714285717) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(257.14285714285717) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(282.85714285714283) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(282.85714285714283) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(308.57142857142856) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(308.57142857142856) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(334.2857142857143) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(334.2857142857143) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(11.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(11.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(41.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(41.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(71.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(71.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(101.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(101.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(131.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(131.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(161.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(161.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(191.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(191.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(221.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(221.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(251.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(251.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(281.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(281.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(311.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(311.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(341.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(341.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><circle r="12" fill="#303762"/><circle cx="2.00" cy="0.00" r="1" fill="#a5afe3"/><circle cx="-2.95" cy="2.70" r="1" fill="#6978b6"/><circle cx="0.52" cy="-5.98" r="1" fill="#d5c9a0"/><circle cx="4.87" cy="6.35" r="1" fill="#a5afe3"/><circle cx="-9.85" cy="-1.74" r="1" fill="#6978b6"/><circle cx="1.69" cy="-1.07" r="1" fill="#d5c9a0"/><circle cx="-1.04" cy="3.86" r="1" fill="#a5afe3"/><circle cx="-2.76" cy="-5.33" r="1" fill="#6978b6"/><circle cx="7.51" cy="2.75" r="1" fill="#d5c9a0"/><circle cx="-9.24" cy="3.81" r="1" fill="#a5afe3"/><circle cx="0.85" cy="-1.81" r="1" fill="#6978b6"/><circle cx="1.20" cy="3.82" r="1" fill="#d5c9a0"/><circle cx="-5.19" cy="-3.01" r="1" fill="#a5afe3"/><circle cx="7.81" cy="-1.71" r="1" fill="#6978b6"/><circle cx="-5.76" cy="8.18" r="1" fill="#d5c9a0"/><circle cx="-0.26" cy="-1.98" r="1" fill="#a5afe3"/><circle cx="3.06" cy="2.58" r="1" fill="#6978b6"/><circle cx="-6.00" cy="0.24" r="1" fill="#d5c9a0"/><circle cx="5.67" cy="-5.64" r="1" fill="#a5afe3"/><circle cx="-0.47" cy="9.99" r="1" fill="#6978b6"/><circle cx="-1.28" cy="-1.54" r="1" fill="#d5c9a0"/><circle cx="3.96" cy="0.54" r="1" fill="#a5afe3"/><circle cx="-4.93" cy="3.42" r="1" fill="#6978b6"/><circle cx="1.76" cy="-7.80" r="1" fill="#d5c9a0"/></g></g></symbol>
 
-      <!-- Lotus pad -->
-      <symbol id="pad" viewBox="-60 -30 120 60" overflow="visible">
-        <path d="M0 0 L4 -26 C34 -26 58 -14 58 0 C58 16 30 26 0 26 C-30 26 -58 16 -58 0 C-58 -14 -34 -26 -4 -26 Z"
-          fill="url(#gPad)" stroke="#bfc79f" stroke-width=".8" />
-        <g stroke="#bcc59a" stroke-width=".7" fill="none">
-          <path d="M0 0 L40 -16 M0 0 L52 4 M0 0 L28 20 M0 0 L-28 20 M0 0 L-52 4 M0 0 L-40 -16" />
-        </g>
-      </symbol>
+      <!-- Cornflower pad -->
+      <symbol id="pad" viewBox="-60 -30 120 60"><path d="M-56 25 Q-30 -30 56 -24 Q30 15 -56 25" fill="#9aaa8a"/><path d="M-56 25L56 -24" stroke="#71876d" fill="none"/></symbol>
 
       <!-- Section corner flourish (top-left orientation) -->
       <symbol id="corner" viewBox="0 0 74 74">
@@ -1027,21 +997,13 @@
         </g>
       </symbol>
 
-      <!-- Placeholder lotus line icon -->
-      <symbol id="lotusLine" viewBox="0 0 54 40">
-        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round">
-          <path d="M27 36 C21 28 21 14 27 4 C33 14 33 28 27 36 Z" />
-          <path d="M27 36 C18 34 12 24 13 12 C20 16 25 24 27 36" />
-          <path d="M27 36 C36 34 42 24 41 12 C34 16 29 24 27 36" />
-          <path d="M27 36 C16 38 6 32 3 24 C12 22 20 28 27 36" />
-          <path d="M27 36 C38 38 48 32 51 24 C42 22 34 28 27 36" />
-        </g>
-      </symbol>
+      <!-- Placeholder cornflower line icon -->
+      <symbol id="cornflowerLine" viewBox="-60 -60 120 120"><g><path transform="rotate(0.0) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(0.0) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(25.714285714285715) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(25.714285714285715) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(51.42857142857143) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(51.42857142857143) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(77.14285714285714) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(77.14285714285714) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(102.85714285714286) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(102.85714285714286) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(128.57142857142858) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(128.57142857142858) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(154.28571428571428) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(154.28571428571428) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(180.0) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(180.0) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(205.71428571428572) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(205.71428571428572) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(231.42857142857142) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(231.42857142857142) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(257.14285714285717) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(257.14285714285717) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(282.85714285714283) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(282.85714285714283) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(308.57142857142856) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(308.57142857142856) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(334.2857142857143) scale(1)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(334.2857142857143) scale(1)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(11.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(11.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(41.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(41.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(71.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(71.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(101.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(101.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(131.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(131.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(161.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(161.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(191.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(191.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(221.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(221.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(251.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4269c2" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(251.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(281.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#658cde" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(281.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(311.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#809ee6" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(311.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><path transform="rotate(341.0) scale(0.71)" d="M-5 -8 Q-13 -23 -12 -34 L-19 -47 L-10 -43 L-8 -54 L-2 -46 L3 -57 L7 -45 L15 -49 L11 -36 Q13 -21 5 -8Z" fill="#4e71cb" stroke="#3355a1" stroke-width=".45"/><path transform="rotate(341.0) scale(0.71)" d="M0 -12 L-3 -42 M0 -18 L7 -39" stroke="#c3d3f6" stroke-width=".65" fill="none" opacity=".65"/><circle r="12" fill="#303762"/><circle cx="2.00" cy="0.00" r="1" fill="#a5afe3"/><circle cx="-2.95" cy="2.70" r="1" fill="#6978b6"/><circle cx="0.52" cy="-5.98" r="1" fill="#d5c9a0"/><circle cx="4.87" cy="6.35" r="1" fill="#a5afe3"/><circle cx="-9.85" cy="-1.74" r="1" fill="#6978b6"/><circle cx="1.69" cy="-1.07" r="1" fill="#d5c9a0"/><circle cx="-1.04" cy="3.86" r="1" fill="#a5afe3"/><circle cx="-2.76" cy="-5.33" r="1" fill="#6978b6"/><circle cx="7.51" cy="2.75" r="1" fill="#d5c9a0"/><circle cx="-9.24" cy="3.81" r="1" fill="#a5afe3"/><circle cx="0.85" cy="-1.81" r="1" fill="#6978b6"/><circle cx="1.20" cy="3.82" r="1" fill="#d5c9a0"/><circle cx="-5.19" cy="-3.01" r="1" fill="#a5afe3"/><circle cx="7.81" cy="-1.71" r="1" fill="#6978b6"/><circle cx="-5.76" cy="8.18" r="1" fill="#d5c9a0"/><circle cx="-0.26" cy="-1.98" r="1" fill="#a5afe3"/><circle cx="3.06" cy="2.58" r="1" fill="#6978b6"/><circle cx="-6.00" cy="0.24" r="1" fill="#d5c9a0"/><circle cx="5.67" cy="-5.64" r="1" fill="#a5afe3"/><circle cx="-0.47" cy="9.99" r="1" fill="#6978b6"/><circle cx="-1.28" cy="-1.54" r="1" fill="#d5c9a0"/><circle cx="3.96" cy="0.54" r="1" fill="#a5afe3"/><circle cx="-4.93" cy="3.42" r="1" fill="#6978b6"/><circle cx="1.76" cy="-7.80" r="1" fill="#d5c9a0"/></g></symbol>
 
       <symbol id="heart" viewBox="0 0 32 30">
         <path
           d="M16 28 C6 21 1 15 1 9.5 C1 4.8 4.6 1.5 8.8 1.5 C11.8 1.5 14.4 3.2 16 5.8 C17.6 3.2 20.2 1.5 23.2 1.5 C27.4 1.5 31 4.8 31 9.5 C31 15 26 21 16 28 Z"
-          fill="var(--pink-deep)" />
+          fill="var(--blue-deep)" />
         <path d="M7 6.5 C8.5 5 10.5 4.8 12 5.6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.4"
           stroke-linecap="round" />
       </symbol>
@@ -1268,17 +1230,17 @@
       <p class="hero-date">12 . 11 . 2026</p>
       <p class="hero-venue">SAINT PHILA HALL A</p>
 
-      <svg class="lotus" aria-hidden="true"
+      <svg class="cornflower" aria-hidden="true"
         style="right:-46px; bottom:-30px; width:130px; height:96px; transform:rotate(-14deg); opacity:.9">
-        <use href="#lotus" />
+        <use href="#cornflower" />
       </svg>
     </section>
 
     <!-- ================= 2. CEREMONY INFO ================= -->
     <section class="ceremony-info">
-      <svg class="lotus" aria-hidden="true"
+      <svg class="cornflower" aria-hidden="true"
         style="left:-58px; top:46%; width:120px; height:90px; transform:rotate(24deg); opacity:.85">
-        <use href="#lotus" />
+        <use href="#cornflower" />
       </svg>
 
       <div class="framed">
@@ -1335,9 +1297,9 @@
       <svg class="divider" aria-hidden="true" style="margin-top:0">
         <use href="#divider" />
       </svg>
-      <p class="body-caps">The marriage ceremony<br>will be held at<br><strong style="font-weight:700">Saint Phila Hall
+      <p class="body-caps">The Baci ceremony<br>will be held at<br><strong style="font-weight:700">Saint Phila Hall
           A</strong><br>at</p>
-      <p class="big-time">09:00</p>
+      <p class="big-time">15:00</p>
       <div class="date-row">
         <span class="dow">THURSDAY</span>
         <span class="day">12</span>
@@ -1371,7 +1333,7 @@
     <section class="reception">
       <h2 class="sec-title">Reception Info</h2>
       <p class="body-caps">The reception will take place at:</p>
-      <p class="big-time">18:30</p>
+      <p class="big-time">19:00</p>
       <div class="date-row">
         <span class="dow">THURSDAY</span>
         <span class="day">12</span>
@@ -1380,12 +1342,12 @@
       <p class="year">2026</p>
       <div class="mini-sched">
         <div>
-          <p class="label">Welcome</p>
-          <p class="t">17:30</p>
+          <p class="label">Grand entrance</p>
+          <p class="t">19:00</p>
         </div>
         <div>
-          <p class="label">Reception</p>
-          <p class="t">18:30</p>
+          <p class="label">Gala dinner</p>
+          <p class="t">20:00</p>
         </div>
       </div>
     </section>
@@ -1467,9 +1429,9 @@
 
     <!-- ================= 8. DRESS CODE ================= -->
     <section class="dress">
-      <svg class="lotus" aria-hidden="true"
+      <svg class="cornflower" aria-hidden="true"
         style="right:-54px; top:38%; width:120px; height:90px; transform:rotate(-22deg); opacity:.85">
-        <use href="#lotus" />
+        <use href="#cornflower" />
       </svg>
       <svg class="divider" aria-hidden="true" style="margin-top:0">
         <use href="#divider" />
@@ -1477,62 +1439,20 @@
       <h2 class="sec-title" style="margin-top:22px">Dress Code</h2>
       <p class="attire script">Party Attire</p>
       <div class="swatches" role="list" aria-label="Suggested colours">
-        <span class="swatch" role="listitem" aria-label="Crimson"
-          style="background:radial-gradient(circle at 35% 30%, #b8323f, #8e1b2a 70%)"></span>
-        <span class="swatch" role="listitem" aria-label="Burgundy"
-          style="background:radial-gradient(circle at 35% 30%, #6e1a28, #4a0e17 70%)"></span>
-        <span class="swatch" role="listitem" aria-label="Cream"
-          style="background:radial-gradient(circle at 35% 30%, #fffaf0, #eee2c8 70%)"></span>
+        <span class="swatch" role="listitem" aria-label="Gold"
+          style="background:radial-gradient(circle at 35% 30%, #dec585, #b4934a 70%)"></span>
+        <span class="swatch" role="listitem" aria-label="Champagne"
+          style="background:radial-gradient(circle at 35% 30%, #f3ead6, #dbc8a2 70%)"></span>
+        <span class="swatch" role="listitem" aria-label="Cornflower Blue"
+          style="background:radial-gradient(circle at 35% 30%, #88a8eb, #426bc1 70%)"></span>
       </div>
-      <div class="swatch-names" aria-hidden="true"><span>Crimson</span><span>Burgundy</span><span>Cream</span></div>
+      <div class="swatch-names" aria-hidden="true"><span>Gold</span><span>Champagne</span><span>Cornflower Blue</span></div>
     </section>
 
     <!-- ================= 9. WEDDING DAY SCHEDULE ================= -->
     <section class="schedule">
       <h2 class="sec-title">Wedding Day Schedule</h2>
-      <ul class="timeline">
-        <li>
-          <svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3"
-            stroke-linejoin="round" aria-hidden="true">
-            <path
-              d="M8 29 V15 A9 9 0 0 1 26 15 V29 M4 29 H30 M12 29 V17 A5 5 0 0 1 22 17 V29 M17 4 V2 M20.5 5 L22 3.5 M13.5 5 L12 3.5" />
-          </svg>
-          <span class="tm">17:30</span><span class="dot"></span><span class="what">Welcome guests</span>
-        </li>
-        <li>
-          <svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3"
-            stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 23 A12 12 0 0 1 29 23 Z M3 26 H31 M17 11 V8.5 M14.5 8.5 H19.5 M9 20 A8 8 0 0 1 13 15" />
-          </svg>
-          <span class="tm">18:30</span><span class="dot"></span><span class="what">Banquet begins</span>
-        </li>
-        <li>
-          <svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3"
-            stroke-linejoin="round" aria-hidden="true">
-            <path
-              d="M7 5 L13 6.5 L11.5 13 A3 3 0 0 1 6 11.6 Z M9 13.3 L7.4 22 M4.5 21.5 L10.3 22.6 M27 5 L21 6.5 L22.5 13 A3 3 0 0 0 28 11.6 Z M25 13.3 L26.6 22 M29.5 21.5 L23.7 22.6 M17 3 V5 M14.5 4.5 L15.5 6 M19.5 4.5 L18.5 6 M11 31 H23 V27 H11 Z M13 27 V24.5 H21 V27" />
-          </svg>
-          <span class="tm">18:45</span><span class="dot"></span><span class="what">Champagne and cake</span>
-        </li>
-        <li>
-          <svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3"
-            stroke-linejoin="round" aria-hidden="true">
-            <circle cx="17" cy="17" r="8.5" />
-            <circle cx="17" cy="17" r="5.5" />
-            <path
-              d="M4 5 V11 A2 2 0 0 0 6 13 V29 M6 5 V11 M8 5 V11 A2 2 0 0 1 6 13 M30 29 V5 C27 7 26.5 12 27 17 H30" />
-          </svg>
-          <span class="tm">19:00</span><span class="dot"></span><span class="what">Main course served</span>
-        </li>
-        <li>
-          <svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3"
-            stroke-linejoin="round" aria-hidden="true">
-            <path
-              d="M21 5 A11 11 0 1 0 29 22 A9 9 0 0 1 21 5 Z M26 6 L27 8.5 L29.5 9.5 L27 10.5 L26 13 L25 10.5 L22.5 9.5 L25 8.5 Z" />
-          </svg>
-          <span class="tm">21:00</span><span class="dot"></span><span class="what">Celebration ends</span>
-        </li>
-      </ul>
+      <ul class="timeline"><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 3L12 13H22Z M10 16H24 M8 20H26 M6 25H28 M9 29H25"/></svg><span class="tm">15:00</span><span class="dot"></span><span class="what">Baci ceremony</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 10H11L13 6H21L23 10H30V28H4Z M23 18A6 6 0 1 0 11 18A6 6 0 1 0 23 18"/></svg><span class="tm">16:00</span><span class="dot"></span><span class="what">Photoshoot</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 29V14A11 11 0 0 1 28 14V29 M11 29V15A6 6 0 0 1 23 15V29"/></svg><span class="tm">19:00</span><span class="dot"></span><span class="what">Grand entrance</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M25 17A8 8 0 1 0 9 17A8 8 0 1 0 25 17 M4 5V29 M30 5V29"/></svg><span class="tm">20:00</span><span class="dot"></span><span class="what">Gala dinner</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M13 25V7L28 4V22 M13 25C13 31 3 31 3 26C3 22 13 21 13 25 M28 22C28 28 18 28 18 23C18 19 28 18 28 22"/></svg><span class="tm">21:30</span><span class="dot"></span><span class="what">Party time</span></li></ul>
     </section>
 
     <!-- ================= CLOSING ================= -->
@@ -1543,7 +1463,7 @@
       <p class="script">Woraphob &amp; Christina</p>
       <p class="label foot-date">12 . 11 . 2026</p>
 
-      <svg class="lotus-row" viewBox="0 0 480 170" aria-hidden="true">
+      <svg class="cornflower-row" viewBox="0 0 480 170" aria-hidden="true">
         <use href="#pad" x="-10" y="118" width="150" height="60" transform="rotate(-6 60 148)" />
         <use href="#pad" x="330" y="124" width="160" height="60" transform="rotate(5 410 154)" />
         <path d="M92 170 C94 150 96 138 98 128" stroke="#b9c39e" stroke-width="2.5" fill="none" />
@@ -1553,17 +1473,17 @@
         <path d="M318 170 C316 152 312 136 306 124" stroke="#b9c39e" stroke-width="2" fill="none" />
         <use href="#bud" x="150" y="54" width="44" height="66" transform="rotate(-12 172 120)" />
         <use href="#bud" x="286" y="58" width="40" height="62" transform="rotate(10 306 124)" />
-        <use href="#lotus" x="36" y="56" width="126" height="76" />
-        <use href="#lotus" x="316" y="60" width="118" height="72" />
-        <use href="#lotus" x="150" y="12" width="180" height="108" />
+        <use href="#cornflower" x="36" y="56" width="126" height="76" />
+        <use href="#cornflower" x="316" y="60" width="118" height="72" />
+        <use href="#cornflower" x="150" y="12" width="180" height="108" />
       </svg>
     </footer>
   </main>
 
   <script>
-    /* ---------- Countdown: 12 Nov 2026, 09:00 in Vientiane (UTC+7) ---------- */
+    /* ---------- Countdown: 12 Nov 2026, 15:00 in Vientiane (UTC+7) ---------- */
     (function () {
-      var target = Date.UTC(2026, 10, 12, 2, 0, 0);   // 09:00 ICT = 02:00 UTC
+      var target = Date.UTC(2026, 10, 12, 8, 0, 0);   // 15:00 ICT = 08:00 UTC
       var ids = ['cd-days', 'cd-hours', 'cd-mins', 'cd-secs'].map(function (id) { return document.getElementById(id); });
       var timer;
       function pad(n) { return String(n).padStart(2, '0'); }
@@ -1608,7 +1528,7 @@
       for (var i = 1; i <= TOTAL; i++) {
         var n = String(i).padStart(2, '0');
         html += '<div class="g-slide"><div class="g-photo">' +
-          '<div class="g-ph"><svg><use href="#lotusLine"/></svg>Photo ' + i + '</div>' +
+          '<div class="g-ph"><svg><use href="#cornflowerLine"/></svg>Photo ' + i + '</div>' +
           '<img src="images/gallery-' + n + '.jpg" alt="Woraphob and Christina, photo ' + i + ' of ' + TOTAL + '" loading="lazy" onerror="this.remove()">' +
           '</div></div>';
       }
