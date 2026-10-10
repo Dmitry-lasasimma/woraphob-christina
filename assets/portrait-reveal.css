@@ -1,0 +1,8 @@
+/* Shared by the envelope and invitation; only hide when the controller runs. */
+html.portrait-loading .envelope-portrait > image,
+html.portrait-loading .frame-svg > image { opacity: 0; }
+.envelope-portrait, .frame-svg { transform-origin: center; transform-box: fill-box; }
+@media (prefers-reduced-motion: reduce) {
+  html.portrait-loading .envelope-portrait > image,
+  html.portrait-loading .frame-svg > image { opacity: 1; }
+}
