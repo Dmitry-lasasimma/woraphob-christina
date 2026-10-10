@@ -8,3 +8,6 @@ tools/
 
 # Private printed stationery references
 envelope real ref/
+
+# Original print artwork remains local
+/LOGO*BillionCard.pdf
