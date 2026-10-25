@@ -916,7 +916,29 @@
         margin: 18px -28px 0;
       }
     }
-  </style>
+
+    .dress-palette { list-style:none; padding:0; margin:22px auto 0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; max-width:370px; }
+    .dress-palette li { display:flex; flex-direction:column; align-items:center; gap:14px; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+    .dress-palette .swatch { flex-shrink:0; width:44px; height:44px; }
+    .dress-note { margin:28px auto 0; max-width:330px; font-size:15px; line-height:1.6; color:var(--ink-soft); }
+    .white-swatch { display:inline-block; width:14px; height:14px; margin-right:8px; vertical-align:-2px; border:1px solid var(--gold-light); border-radius:50%; background:white; }
+    .gift-intro { max-width:340px; margin:0 auto 24px; line-height:1.7; color:var(--ink-soft); }
+    .gift-card { padding:24px 20px; border:1px solid var(--gold-light); border-radius:100px 100px 12px 12px / 38px 38px 12px 12px; background:linear-gradient(145deg,#fffef9,#f5f1e7); box-shadow:0 8px 30px rgba(143,114,55,.06); }
+    .gift-card h3 { margin:0 0 6px; font-weight:normal; color:var(--gold-dark); font-size:26px; }
+    .gift-card .bank-label { margin:0 0 20px; font-size:11px; letter-spacing:.15em; }
+    .gift-currencies { display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin:0 0 20px; }
+    .gift-currencies a { padding:9px 17px; border:1px solid var(--gold-light); border-radius:24px; color:var(--ink); text-decoration:none; font-size:13px; }
+    .gift-currencies a[aria-current="true"] { background:var(--gold-dark); color:white; border-color:var(--gold-dark); }
+    .gift-panel[hidden] { display:none; }
+    .gift-panel h4 { margin:0 0 14px; font-size:17px; font-weight:normal; }
+    .bank-code { display:block; width:100%; max-width:270px; aspect-ratio:1; margin:0 auto; background:white; border:1px solid #e9e3d6; }
+    .gift-recipient { margin:14px 0 18px; font-size:12px; letter-spacing:.04em; }
+    .qr-download { display:inline-block; border:1px solid var(--gold-dark); border-radius:24px; padding:12px 20px; color:var(--gold-dark); text-decoration:none; font-size:13px; }
+    .qr-download:hover { background:#eee6d5; }
+    .gift-currencies a:focus-visible,.qr-download:focus-visible { outline:2px solid var(--gold-dark); outline-offset:4px; }
+    .gift-help { margin:20px auto 0; max-width:310px; font-size:14px; line-height:1.65; color:var(--ink-soft); }
+
+</style>
 <link rel="stylesheet" href="assets/portrait-reveal.css">
 <script src="assets/portrait-reveal.js"></script>
 </head>
@@ -1231,7 +1253,7 @@
     </section>
 
     <!-- ================= 8. DRESS CODE ================= -->
-    <section class="dress">
+    <section class="dress" id="dress-code">
       <svg class="cornflower" aria-hidden="true"
         style="right:-54px; top:38%; width:120px; height:90px; transform:rotate(-22deg); opacity:.85">
         <use href="#cornflower" />
@@ -1241,21 +1263,57 @@
       </svg>
       <h2 class="sec-title" style="margin-top:22px">Dress Code</h2>
       <p class="attire script">Party Attire</p>
-      <div class="swatches" role="list" aria-label="Suggested colours">
-        <span class="swatch" role="listitem" aria-label="Gold"
-          style="background:radial-gradient(circle at 35% 30%, #dec585, #b4934a 70%)"></span>
-        <span class="swatch" role="listitem" aria-label="Champagne"
-          style="background:radial-gradient(circle at 35% 30%, #f3ead6, #dbc8a2 70%)"></span>
-        <span class="swatch" role="listitem" aria-label="Cornflower Blue"
-          style="background:radial-gradient(circle at 35% 30%, #88a8eb, #426bc1 70%)"></span>
-      </div>
-      <div class="swatch-names" aria-hidden="true"><span>Gold</span><span>Champagne</span><span>Cornflower Blue</span></div>
+      <ul class="dress-palette" aria-label="Suggested colours">
+        <li><span class="swatch" style="background:radial-gradient(circle at 35% 30%, #dec585, #b4934a 70%)"></span>Gold</li>
+        <li><span class="swatch" style="background:radial-gradient(circle at 35% 30%, #f3ead6, #dbc8a2 70%)"></span>Champagne</li>
+        <li><span class="swatch" style="background:#C8B6FF"></span>Mauve</li>
+        <li><span class="swatch" style="background:#BBCFFF"></span>Lavender Blue</li>
+      </ul>
+      <p class="dress-note"><span class="white-swatch" aria-hidden="true"></span>We kindly ask guests to avoid white attire.</p>
     </section>
 
     <!-- ================= 9. WEDDING DAY SCHEDULE ================= -->
     <section class="schedule">
       <h2 class="sec-title">Wedding Day Schedule</h2>
       <ul class="timeline"><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M17 3L12 13H22Z M10 16H24 M8 20H26 M6 25H28 M9 29H25"/></svg><span class="tm">15:00</span><span class="dot"></span><span class="what">Baci ceremony</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 10H11L13 6H21L23 10H30V28H4Z M23 18A6 6 0 1 0 11 18A6 6 0 1 0 23 18"/></svg><span class="tm">16:00</span><span class="dot"></span><span class="what">Photoshoot</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 29V14A11 11 0 0 1 28 14V29 M11 29V15A6 6 0 0 1 23 15V29"/></svg><span class="tm">19:00</span><span class="dot"></span><span class="what">Grand entrance</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M25 17A8 8 0 1 0 9 17A8 8 0 1 0 25 17 M4 5V29 M30 5V29"/></svg><span class="tm">20:00</span><span class="dot"></span><span class="what">Gala dinner</span></li><li><svg class="ico" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M13 25V7L28 4V22 M13 25C13 31 3 31 3 26C3 22 13 21 13 25 M28 22C28 28 18 28 18 23C18 19 28 18 28 22"/></svg><span class="tm">21:30</span><span class="dot"></span><span class="what">Party time</span></li></ul>
+    </section>
+
+    <section class="gifts" aria-labelledby="gifts-title">
+      <svg class="divider" aria-hidden="true"><use href="#divider" /></svg>
+      <h2 class="sec-title" id="gifts-title">Wedding Gifts</h2>
+      <p class="gift-intro">Your presence is our greatest gift. If you wish to send a wedding gift, you are welcome to use the bank QR codes below in place of a traditional envelope.</p>
+      <div class="gift-card">
+        <h3 class="script">With love &amp; gratitude</h3>
+        <p class="bank-label">WORAPHOB &amp; CHRISTINA · BCEL</p>
+        <nav class="gift-currencies" aria-label="Choose gift currency">
+          <a href="#gift-lak">LAK</a><a href="#gift-thb">THB</a><a href="#gift-usd">USD</a>
+        </nav>
+        <div class="gift-panel" id="gift-lak">
+          <h4>Lao Kip · LAK</h4>
+          <svg class="bank-code" viewBox="395 1128 500 500" role="img" aria-label="BCEL LAK gift QR code for Christina Lasasimma">
+            <image href="images/bank-qr/lak.jpeg" width="1290" height="2796" />
+          </svg>
+          <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
+          <a class="qr-download" href="images/bank-qr/lak.jpeg" download="Woraphob-Christina-BCEL-LAK.jpeg">Download LAK QR code ↓</a>
+        </div>
+        <div class="gift-panel" id="gift-thb">
+          <h4>Thai Baht · THB</h4>
+          <svg class="bank-code" viewBox="395 1128 500 500" role="img" aria-label="BCEL THB gift QR code for Christina Lasasimma">
+            <image href="images/bank-qr/thb.jpeg" width="1290" height="2796" />
+          </svg>
+          <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
+          <a class="qr-download" href="images/bank-qr/thb.jpeg" download="Woraphob-Christina-BCEL-THB.jpeg">Download THB QR code ↓</a>
+        </div>
+        <div class="gift-panel" id="gift-usd">
+          <h4>US Dollar · USD</h4>
+          <svg class="bank-code" viewBox="395 1128 500 500" role="img" aria-label="BCEL USD gift QR code for Christina Lasasimma">
+            <image href="images/bank-qr/usd.jpeg" width="1290" height="2796" />
+          </svg>
+          <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
+          <a class="qr-download" href="images/bank-qr/usd.jpeg" download="Woraphob-Christina-BCEL-USD.jpeg">Download USD QR code ↓</a>
+        </div>
+        <p class="gift-help">Choose your currency and save the QR image. In your banking app, choose the option to scan a QR from your photos, if supported. Please check the recipient and currency before confirming.</p>
+      </div>
     </section>
 
     <!-- ================= CLOSING ================= -->
@@ -1284,6 +1342,20 @@
   </main>
 
   <script>
+    /* Currency links remain usable without JavaScript; enhance to one panel at a time. */
+    (function () {
+      var links = Array.from(document.querySelectorAll('.gift-currencies a'));
+      var panels = Array.from(document.querySelectorAll('.gift-panel'));
+      function select(id) {
+        panels.forEach(function (panel) { panel.hidden = panel.id !== id; });
+        links.forEach(function (link) { link.setAttribute('aria-current', String(link.hash === '#' + id)); });
+      }
+      links.forEach(function (link) {
+        link.addEventListener('click', function (event) { event.preventDefault(); select(link.hash.slice(1)); });
+      });
+      select(panels.some(function (panel) { return '#' + panel.id === location.hash; }) ? location.hash.slice(1) : 'gift-lak');
+    })();
+
     /* ---------- Countdown: 12 Nov 2026, 15:00 in Vientiane (UTC+7) ---------- */
     (function () {
       var target = Date.UTC(2026, 10, 12, 8, 0, 0);   // 15:00 ICT = 08:00 UTC

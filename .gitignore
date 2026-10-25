@@ -11,3 +11,6 @@ envelope real ref/
 
 # Original print artwork remains local
 /LOGO*BillionCard.pdf
+
+# Original bank screenshots stay local; published copies are in images/bank-qr/
+/Couple's bank QR code/
