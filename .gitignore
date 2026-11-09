@@ -14,3 +14,6 @@ envelope real ref/
 
 # Original bank screenshots stay local; published copies are in images/bank-qr/
 /Couple's bank QR code/
+
+# Original gallery photos stay local; web-sized copies are in images/gallery-*.jpg
+/Photo Gallery/

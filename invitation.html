@@ -77,6 +77,7 @@
       padding: calc(40px + env(safe-area-inset-top, 0px)) 20px calc(24px + env(safe-area-inset-bottom, 0px));
       text-align: center;
       overflow: hidden;
+      overflow: clip;   /* clip, not scroll: focus/anchors must not shift the card sideways */
     }
 
     section {
@@ -380,7 +381,7 @@
      4. PHOTO GALLERY
      ========================================================= */
     .gallery {
-      --sw: min(60vw, 270px);
+      --sw: min(82vw, 380px);
       margin: 0 -20px;
     }
 
@@ -407,7 +408,7 @@
 
     .g-photo {
       position: relative;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 3 / 2;
       border-radius: 10px;
       overflow: hidden;
       background: linear-gradient(160deg, #f7ece6 0%, #efe2cf 55%, #e8d7c1 100%);
@@ -456,7 +457,7 @@
       font-weight: 600;
       letter-spacing: 0.18em;
       color: var(--ink-soft);
-      font-variant-numeric: tabular-nums;
+      font-variant-numeric: tabular-nums lining-nums;
     }
 
     .g-btn {
@@ -930,8 +931,14 @@
     .gift-currencies a { padding:9px 17px; border:1px solid var(--gold-light); border-radius:24px; color:var(--ink); text-decoration:none; font-size:13px; }
     .gift-currencies a[aria-current="true"] { background:var(--gold-dark); color:white; border-color:var(--gold-dark); }
     .gift-panel[hidden] { display:none; }
+    .gift-banks { display:flex; gap:4px; max-width:330px; margin:16px auto 18px; padding:4px; border:1px solid var(--gold-light); border-radius:30px; }
+    .gift-banks a { flex:1 1 auto; padding:9px 10px; border-radius:24px; color:var(--gold-dark); text-decoration:none; font-size:12px; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+    .gift-banks a[aria-current="true"] { background:linear-gradient(180deg,#c8a95f,#a9873f); color:#fffdf6; }
+    .gift-banks a:focus-visible { outline:2px solid var(--gold-dark); outline-offset:3px; }
+    .gift-bank[hidden] { display:none; }
+    .bank-note { margin:-14px 0 18px; font-size:14px; font-style:italic; color:var(--ink-soft); }
     .gift-panel h4 { margin:0 0 14px; font-size:17px; font-weight:normal; }
-    .bank-code { display:block; width:100%; max-width:270px; aspect-ratio:1; margin:0 auto; background:white; border:1px solid #e9e3d6; }
+    .bank-code { display:block; width:100%; max-width:270px; height:auto; aspect-ratio:1; margin:0 auto; background:white; border:1px solid #e9e3d6; }
     .gift-recipient { margin:14px 0 18px; font-size:12px; letter-spacing:.04em; }
     .qr-download { display:inline-block; border:1px solid var(--gold-dark); border-radius:24px; padding:12px 20px; color:var(--gold-dark); text-decoration:none; font-size:13px; }
     .qr-download:hover { background:#eee6d5; }
@@ -1144,7 +1151,7 @@
               <path d="M9 2 L4 7 L9 12" />
             </svg>
           </button>
-          <span class="g-count" id="gCount" aria-live="polite">1 / 10</span>
+          <span class="g-count" id="gCount" aria-live="polite">1 / 3</span>
           <button class="g-btn" id="gNext" type="button" aria-label="Next photo">
             <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M5 2 L10 7 L5 12" />
@@ -1284,35 +1291,65 @@
       <p class="gift-intro">Your presence is our greatest gift. If you wish to send a wedding gift, you are welcome to use the bank QR codes below in place of a traditional envelope.</p>
       <div class="gift-card">
         <h3 class="script">With love &amp; gratitude</h3>
-        <p class="bank-label">WORAPHOB &amp; CHRISTINA · BCEL</p>
-        <nav class="gift-currencies" aria-label="Choose gift currency">
-          <a href="#gift-lak">LAK</a><a href="#gift-thb">THB</a><a href="#gift-usd">USD</a>
+        <nav class="gift-banks" aria-label="Choose bank">
+          <a href="#gift-bcel-lak" data-bank="bcel">BCEL</a><a href="#gift-psv-lak" data-bank="psv">Phongsavanh</a><a href="#gift-kbank-thb" data-bank="kbank">KBank</a>
         </nav>
-        <div class="gift-panel" id="gift-lak">
-          <h4>Lao Kip · LAK</h4>
-          <svg class="bank-code" viewBox="395 1128 500 500" role="img" aria-label="BCEL LAK gift QR code for Christina Lasasimma">
-            <image href="images/bank-qr/lak.jpeg" width="1290" height="2796" />
-          </svg>
-          <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
-          <a class="qr-download" href="images/bank-qr/wedding-gift-lak.png" download="Woraphob-Christina-BCEL-LAK.png">Download LAK QR code ↓</a>
+        <div class="gift-bank" id="bank-bcel">
+          <p class="bank-label">WORAPHOB &amp; CHRISTINA · BCEL</p>
+          <nav class="gift-currencies" aria-label="Choose gift currency"><a href="#gift-bcel-lak">LAK</a><a href="#gift-bcel-thb">THB</a><a href="#gift-bcel-usd">USD</a></nav>
+          <div class="gift-panel" id="gift-bcel-lak">
+            <h4>Lao Kip · LAK</h4>
+            <img class="bank-code" src="images/bank-qr/bcel-lak.png" width="600" height="600" loading="lazy" alt="BCEL LAK gift QR code for Christina Lasasimma">
+            <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
+            <a class="qr-download" href="images/bank-qr/wedding-gift-bcel-lak.png" download="Woraphob-Christina-BCEL-LAK.png">Download LAK QR code ↓</a>
+          </div>
+          <div class="gift-panel" id="gift-bcel-thb">
+            <h4>Thai Baht · THB</h4>
+            <img class="bank-code" src="images/bank-qr/bcel-thb.png" width="600" height="600" loading="lazy" alt="BCEL THB gift QR code for Christina Lasasimma">
+            <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
+            <a class="qr-download" href="images/bank-qr/wedding-gift-bcel-thb.png" download="Woraphob-Christina-BCEL-THB.png">Download THB QR code ↓</a>
+          </div>
+          <div class="gift-panel" id="gift-bcel-usd">
+            <h4>US Dollar · USD</h4>
+            <img class="bank-code" src="images/bank-qr/bcel-usd.png" width="600" height="600" loading="lazy" alt="BCEL USD gift QR code for Christina Lasasimma">
+            <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
+            <a class="qr-download" href="images/bank-qr/wedding-gift-bcel-usd.png" download="Woraphob-Christina-BCEL-USD.png">Download USD QR code ↓</a>
+          </div>
         </div>
-        <div class="gift-panel" id="gift-thb">
-          <h4>Thai Baht · THB</h4>
-          <svg class="bank-code" viewBox="395 1128 500 500" role="img" aria-label="BCEL THB gift QR code for Christina Lasasimma">
-            <image href="images/bank-qr/thb.jpeg" width="1290" height="2796" />
-          </svg>
-          <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
-          <a class="qr-download" href="images/bank-qr/wedding-gift-thb.png" download="Woraphob-Christina-BCEL-THB.png">Download THB QR code ↓</a>
+        <div class="gift-bank" id="bank-psv">
+          <p class="bank-label">WORAPHOB &amp; CHRISTINA · PHONGSAVANH</p>
+          <nav class="gift-currencies" aria-label="Choose gift currency"><a href="#gift-psv-lak">LAK</a><a href="#gift-psv-thb">THB</a><a href="#gift-psv-usd">USD</a></nav>
+          <div class="gift-panel" id="gift-psv-lak">
+            <h4>Lao Kip · LAK</h4>
+            <img class="bank-code" src="images/bank-qr/psv-lak.png" width="600" height="600" loading="lazy" alt="Phongsavanh Bank LAK gift QR code for Christina Lasasimma">
+            <p class="gift-recipient">CHRISTINA LASASIMMA</p>
+            <a class="qr-download" href="images/bank-qr/wedding-gift-psv-lak.png" download="Woraphob-Christina-Phongsavanh-LAK.png">Download LAK QR code ↓</a>
+          </div>
+          <div class="gift-panel" id="gift-psv-thb">
+            <h4>Thai Baht · THB</h4>
+            <img class="bank-code" src="images/bank-qr/psv-thb.png" width="600" height="600" loading="lazy" alt="Phongsavanh Bank THB gift QR code for Christina Lasasimma">
+            <p class="gift-recipient">CHRISTINA LASASIMMA</p>
+            <a class="qr-download" href="images/bank-qr/wedding-gift-psv-thb.png" download="Woraphob-Christina-Phongsavanh-THB.png">Download THB QR code ↓</a>
+          </div>
+          <div class="gift-panel" id="gift-psv-usd">
+            <h4>US Dollar · USD</h4>
+            <img class="bank-code" src="images/bank-qr/psv-usd.png" width="600" height="600" loading="lazy" alt="Phongsavanh Bank USD gift QR code for Christina Lasasimma">
+            <p class="gift-recipient">CHRISTINA LASASIMMA</p>
+            <a class="qr-download" href="images/bank-qr/wedding-gift-psv-usd.png" download="Woraphob-Christina-Phongsavanh-USD.png">Download USD QR code ↓</a>
+          </div>
         </div>
-        <div class="gift-panel" id="gift-usd">
-          <h4>US Dollar · USD</h4>
-          <svg class="bank-code" viewBox="395 1128 500 500" role="img" aria-label="BCEL USD gift QR code for Christina Lasasimma">
-            <image href="images/bank-qr/usd.jpeg" width="1290" height="2796" />
-          </svg>
-          <p class="gift-recipient">CHRISTINA LASASIMMA MS</p>
-          <a class="qr-download" href="images/bank-qr/wedding-gift-usd.png" download="Woraphob-Christina-BCEL-USD.png">Download USD QR code ↓</a>
+        <div class="gift-bank" id="bank-kbank">
+          <p class="bank-label">WORAPHOB &amp; CHRISTINA · KASIKORNBANK</p>
+          <p class="bank-note">For transfers from Thailand (PromptPay)</p>
+          <nav class="gift-currencies" aria-label="Choose gift currency"><a href="#gift-kbank-thb">THB</a></nav>
+          <div class="gift-panel" id="gift-kbank-thb">
+            <h4>Thai Baht · THB</h4>
+            <img class="bank-code" src="images/bank-qr/kbank-thb.png" width="600" height="600" loading="lazy" alt="KASIKORNBANK THB gift QR code for Christina Lasasimma">
+            <p class="gift-recipient">MS. CHRISTINA LASASIMMA</p>
+            <a class="qr-download" href="images/bank-qr/wedding-gift-kbank-thb.png" download="Woraphob-Christina-KBank-THB.png">Download THB QR code ↓</a>
+          </div>
         </div>
-        <p class="gift-help">Choose your currency and save the QR image. In your banking app, choose the option to scan a QR from your photos, if supported. Please check the recipient and currency before confirming.</p>
+        <p class="gift-help">Choose your bank and currency, then save the QR image. In your banking app, choose the option to scan a QR from your photos, if supported. Please check the recipient and currency before confirming.</p>
       </div>
     </section>
 
@@ -1342,18 +1379,24 @@
   </main>
 
   <script>
-    /* Currency links remain usable without JavaScript; enhance to one panel at a time. */
+    /* Bank and currency links remain usable without JavaScript; enhance to one bank and one panel at a time. */
     (function () {
+      var banks = Array.from(document.querySelectorAll('.gift-bank'));
+      var bankLinks = Array.from(document.querySelectorAll('.gift-banks a'));
       var links = Array.from(document.querySelectorAll('.gift-currencies a'));
       var panels = Array.from(document.querySelectorAll('.gift-panel'));
       function select(id) {
-        panels.forEach(function (panel) { panel.hidden = panel.id !== id; });
+        var panel = document.getElementById(id);
+        var bank = panel.closest('.gift-bank');
+        banks.forEach(function (b) { b.hidden = b !== bank; });
+        panels.forEach(function (p) { p.hidden = p !== panel; });
+        bankLinks.forEach(function (link) { link.setAttribute('aria-current', String('bank-' + link.dataset.bank === bank.id)); });
         links.forEach(function (link) { link.setAttribute('aria-current', String(link.hash === '#' + id)); });
       }
-      links.forEach(function (link) {
+      links.concat(bankLinks).forEach(function (link) {
         link.addEventListener('click', function (event) { event.preventDefault(); select(link.hash.slice(1)); });
       });
-      select(panels.some(function (panel) { return '#' + panel.id === location.hash; }) ? location.hash.slice(1) : 'gift-lak');
+      select(panels.some(function (panel) { return '#' + panel.id === location.hash; }) ? location.hash.slice(1) : 'gift-bcel-lak');
     })();
 
     /* ---------- Countdown: 12 Nov 2026, 15:00 in Vientiane (UTC+7) ---------- */
@@ -1393,10 +1436,10 @@
     })();
 
     /* ---------- Photo gallery ----------
-       Drop photos into images/ as gallery-01.jpg … gallery-10.jpg.
+       Photos live in images/ as gallery-01.jpg, gallery-02.jpg, … — raise TOTAL when adding more.
        Missing files show a placeholder instead. */
     (function () {
-      var TOTAL = 10;
+      var TOTAL = 3;
       var track = document.getElementById('gTrack');
       var count = document.getElementById('gCount');
       var html = '';
